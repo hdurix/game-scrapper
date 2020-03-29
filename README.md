@@ -10,7 +10,30 @@
 
 Run main in `KadokadoScrapperApplication.java`.
 
-## POC
+## Login with shell
+
+### Run the command
+
+    ./sid.sh email@hotmail.fr MyPassword
+
+### Example with the app
+
+    SID=$(./sid.sh email@hotmail.fr MyPassword) ./mvnw spring-boot:run
+
+## Login with Docker
+
+/!\ This does not work properly, I don't know why.
+
+### Build and run the Docker image
+
+    docker build . -t kadokado
+    docker run kadokado:latest email@hotmail.fr MyPassword
+
+### Example with the app
+
+    SID=$(docker run kadokado:latest email@hotmail.fr MyPassword) ./mvnw spring-boot:run
+
+## POC (to undestand steps)
 
 To use this POC, you need to replace every string with pattern `!string!`. Here a POC made with:
 - [curl](https://curl.haxx.se/)
