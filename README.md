@@ -41,8 +41,6 @@ For instance with https://www.urlencoder.org/ (copy paste `!URL!` then click on 
 
 ##### Curl example
 
-/!\ putting URL inside in a variable does not seem to work here
-
     EMAIL=!my_mail@hotmail.fr!
     PASSWORD=!MyPass!
     SID1=!SID1!
