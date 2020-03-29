@@ -16,6 +16,12 @@ Run main in `KadokadoScrapperApplication.java`.
 
     ./sid.sh email@hotmail.fr MyPassword
 
+You will have to run it in Linux distribution with some dependencies:
+- curl
+- html-xml-utils
+- gridsite-clients
+- ca-certificates (not sure about this one)
+
 ### Example with the app
 
     SID=$(./sid.sh email@hotmail.fr MyPassword) ./mvnw spring-boot:run
