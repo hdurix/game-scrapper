@@ -22,13 +22,9 @@ TW_SID=$(echo $HTML  | hxnormalize -x | hxselect -s '\n' 'input[name='sid']' | s
 
 #echo $TW_SID
 
-URL_ENCODED=$(urlencode $URL)
-
-#echo $URL_ENCODED
-
 SID=$(curl -s -c - -L 'https://twinoid.com/user/redir' \
         --cookie 'tw_sid='$TW_SID'' \
-        --data-urlencode 'login='$EMAIL'' --data 'pass='$PASSWORD'' --data 'url='$URL_ENCODED'' \
+        --data-urlencode 'login='$EMAIL'' --data 'pass='$PASSWORD'' --data-urlencode 'url='$URL'' \
         | grep sid | sed -n 's/^.*sid\t\(\S*\).*$/\1/p'
 )
 

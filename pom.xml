@@ -15,7 +15,7 @@
 	<description>KadoKado Scrapper</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>8</java.version>
 		<jsoup.version>1.13.1</jsoup.version>
 	</properties>
 
