@@ -26,9 +26,7 @@ You will have to run it in Linux distribution with some dependencies:
 
     SID=$(./sid.sh email@hotmail.fr MyPassword) ./mvnw spring-boot:run
 
-## Login with Docker
-
-/!\ This does not work properly, I don't know why.
+## Login with Docker (recommended on Windows!)
 
 ### Build and run the Docker image
 

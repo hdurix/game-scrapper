@@ -18,18 +18,18 @@ URL=$(echo $HTML | hxnormalize -x | hxselect -s '\n' 'input[name='url']' | sed -
 
 #echo $URL
 
-SID1=$(echo $HTML  | hxnormalize -x | hxselect -s '\n' 'input[name='sid']' | sed -n 's/^.*value="\(\S*\)".*$/\1/p')
+TW_SID=$(echo $HTML  | hxnormalize -x | hxselect -s '\n' 'input[name='sid']' | sed -n 's/^.*value="\(\S*\)".*$/\1/p')
 
-#echo $SID1
+#echo $TW_SID
 
 URL_ENCODED=$(urlencode $URL)
 
 #echo $URL_ENCODED
 
-SID2=$(curl -s -c - -L 'https://twinoid.com/user/redir' \
-        -H 'Cookie: tw_sid='$SID1'' \
+SID=$(curl -s -c - -L 'https://twinoid.com/user/redir' \
+        --cookie 'tw_sid='$TW_SID'' \
         --data-urlencode 'login='$EMAIL'' --data 'pass='$PASSWORD'' --data 'url='$URL_ENCODED'' \
         | grep sid | sed -n 's/^.*sid\t\(\S*\).*$/\1/p'
 )
 
-echo $SID2
+echo $SID
